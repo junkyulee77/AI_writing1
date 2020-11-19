@@ -1,0 +1,13 @@
+URL = 'https://search.naver.com/search.naver?query={}&nso=&where=view&sm=tab_nmr&mode=normal&start={}'
+
+r = requests.get(url)                    soup = BeautifulSoup(r.text, 'html.parser', from_encoding='utf-8')
+
+END_OF_SENTS = ['.', '!', '?', '~', '다', '당', '요', '용', '죠', '죵', '여', '쥬', '됨']
+
+'MAG', 'VA', 'VX', 'VV', 'XR', 'NNG', 'NNB', 'NNP'
+
+
+The peak_pick parameters were chosen by large-scale hyper-parameter optimization over the dataset provided by 1.
+
+1
+https://github.com/CPJKU/onset_db

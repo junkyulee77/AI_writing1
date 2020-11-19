@@ -1,0 +1,89 @@
+
+
+{% extends 'layout.html' %}
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+{% block content %}
+
+{% if message %}
+    <script type="text/javascript" language="JavaScript">
+        alert("{{ message }}");
+    </script>
+{% endif %}
+
+
+
+
+<div id="ctn">
+	<div class="ctn_top">
+		<span class="title">AI Writing</span>
+	</div>
+
+	<form action="/write" method="post">
+
+		<table>
+
+			<tr>
+				<td>분류(필수)</td>
+				<td>
+					<select name="category_list" >
+                        <!--option value="" > - 분류선택 - </option-->
+                        {% if category_list %}
+							{% for category in category_list %}
+								<option value="{{ category }}" {% if selected_category==category %}selected{% endif %}>{{ category }}</option>
+							{% endfor %}
+						{% endif %}
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td>검색어(필수)</td>
+				<td>
+					<input type="text" name="search" placeholder="검색어를 입력하세요." value="{{ search }}">
+				</td>
+			</tr>
+
+			<tr>
+				<td>키워드</td>
+				<td>
+					<input type="text" name="keywords" placeholder="키워드를 입력하세요." value="{{ keywords }}">
+				</td>
+			</tr>
+
+			<tr>
+				<td>글자수</td>
+				<td>
+					<input type="text" name="length_write" placeholder="생성할 문서의 글자수를 입력하세요." value="{{ length_write }}">
+				</td>
+			</tr>
+
+		</table>
+
+		<div class="cr_button">
+
+			<input type="submit" name="action_type" class="btn_learn" id="learn" value="학습하기"/>
+			<input type="submit" name="action_type" class="btn_cr" id="cr" value="문서생성"/>
+
+		</div>    
+
+        <table>
+            <tr>
+                <td style="border:none">
+                    <textarea name="writing" rows="15" cols="120">{{ writing }}</textarea>
+                </td>
+            </tr>            
+        </table>
+
+	</form>
+
+
+</div>
+
+
+{% endblock %}

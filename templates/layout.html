@@ -1,0 +1,57 @@
+
+<!DOCTYPE HTML>
+
+
+<html lang="kr">
+
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=1280">
+		<meta http-equiv="imagetoolbar" content="no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="주니스에이아이">
+        <meta name="keywords" content="ai,딥러닝원고,딥러닝원고생성기,ai원고생성기,ai원고프로그램">
+        <meta name="description" content="주니스에이아이에서 제공하는 딥러닝원고생성기">
+        <title>주니스에이아이</title>
+        <link rel="stylesheet" href="/static/css/default.css">
+        <link rel="stylesheet" href="/static/js/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/js/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <!--link rel="shortcut icon" type="image/png" href="/images/logoico.ico"-->
+		<meta name="naver-site-verification" content="20c9188177a179ed0b8c81ce85762889ca9042c3" />
+        <script src="/static/js/includeHTML.js"></script>
+
+    </head>
+
+
+    <body>
+
+        <header>
+            <!-- 상단 시작 { -->
+            <div id="hd">
+                <ul>
+                    <a href="{{ url_for('write') }}"><li>원고생성</li></a>
+                </ul>
+
+            </div>
+            <!-- } 상단 끝 -->
+        </header>
+
+
+        <section>
+            <!-- Main content block -->
+            {% block content %} {% endblock %}
+        </section>
+
+    </body>
+
+
+
+<script>
+    includeHTML();
+</script>
+
+
+
+</html>
